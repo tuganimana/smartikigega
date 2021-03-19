@@ -72,10 +72,10 @@ def digitalapp (request):
             response += '2.momo isanzwe'
         elif text == '1*1':
             response = 'CON shyiramo code yumuhinzi '+str(level)+' \n' 
-            if Farmers.objetcs.filter(code=str(level[2])).exist():
-                response = 'CON shyiramo ingano yumusaruro mu biro cg litiro '+str(level)+' \n'
-            else:
-                response = 'END code washyizemo ntibaho '+str(level)+' \n'
+            # if Farmers.objetcs.filter(code=str(level[2])).exist():
+            #     response = 'CON shyiramo ingano yumusaruro mu biro cg litiro '+str(level)+' \n'
+            # else:
+            #     response = 'END code washyizemo ntibaho '+str(level)+' \n'
    
         elif num == '1*1' and int(len(level))==4 and str(level[3]) in str(level):
             response = 'CON shyiramo amafaranga ugiye kwishyura \n' 
