@@ -42,10 +42,10 @@ def digitalapp (request):
             
             if text == '':
 
-                response = 'CON murakaza neza kurubuga rwabahinzi Smart ikigega \n'
-                response += '1.ikigega pay \n'
+                response = "CON murakaza neza kurubuga rw'abahinzi Smart ikigega \n"
+                response += '1.Ikigega pay \n'
                 response += '2.ibijyanye numusaruro \n'
-                response += '3.kwiyandikisha mukigega \n'
+                response += '3.kwiyandikisha muri COOPERATIVE \n'
                 response += '4.kubarura umusaruro \n'
                 #  harvesting session
             elif text == '1':
