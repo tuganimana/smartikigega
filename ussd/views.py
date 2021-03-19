@@ -17,7 +17,7 @@ from django.core.signing import Signer
 from django.views.decorators.csrf import csrf_exempt
 username = "nesjoselyne@gmail.com"
 api_key = "7d5ec7e665579ee7ef1a3a71927f74123d0542960de776089cc89b28b4977804"
-
+africastalking.initialize(username, api_key)
 
 @csrf_exempt
 def digitalapp (request):
