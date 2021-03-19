@@ -15,8 +15,8 @@ import datetime
 from random import randint
 from django.core.signing import Signer
 from django.views.decorators.csrf import csrf_exempt
-username = "nesjoselyne@gmail.com"
-api_key = "7d5ec7e665579ee7ef1a3a71927f74123d0542960de776089cc89b28b4977804"
+username = "tuganimana01@gmail.com"
+api_key = "d06d5d1c7bf8213c4f354f39cc114aef2d03faef644f17b11cc9142a256758bf"
 africastalking.initialize(username, api_key)
 
 @csrf_exempt
@@ -42,7 +42,7 @@ def digitalapp (request):
             
             if text == '':
 
-                response = "CON Murakaza neza kurubuga rw'abahinzi Smart ikigega \n"
+                response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
                 response += '1.Ikigega pay \n'
                 response += '2.ibijyanye numusaruro \n'
                 response += '3.kwiyandikisha muri COOPERATIVE \n'
