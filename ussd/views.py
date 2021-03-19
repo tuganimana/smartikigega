@@ -22,15 +22,20 @@ africastalking.initialize(username, api_key)
 @csrf_exempt
 def digitalapp (request):
     if request.method == 'POST':
-        session_id = request.POST.get('sessionId')
-        service_code = request.POST.get('serviceCode')
-        phone_number = request.POST.get("phoneNumber")
-        text = request.POST.get('text')
+        # session_id = request.POST.get('sessionId')
+        # service_code = request.POST.get('serviceCode')
+        # phone_number = request.POST.get("phoneNumber")
+        # text = request.POST.get('text')
+        session_id = request.values.get("sessionId", None)
+        service_code = request.values.get("serviceCode", None)
+        phone_number = request.values.get("phoneNumber", None)
+        text = request.values.get("text", "default")
         level = text.split('*')
         response = ''
         num = text[:3]
 
         if text == '':
+
             response = 'CON murakaza neza kurubuga rwabahinzi Smart ikigega \n'
             response += '1.ikigega pay \n'
             response += '2.ibijyanye numusaruro \n'
@@ -42,6 +47,7 @@ def digitalapp (request):
             response += '1.uri mukigega \n'
             response += '2.momo isanzwe'
         elif text == '1*1':
+
             response = 'CON shyiramo code yumuhinzi '+str(level)+' \n' 
             # if Farmers.objetcs.filter(code=str(level[2])).exists():
             #     response = 'CON shyiramo ingano yumusaruro mu biro cg litiro '+str(level)+' \n'
