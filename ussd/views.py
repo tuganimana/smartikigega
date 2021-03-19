@@ -197,7 +197,7 @@ def digitalapp (request):
                    
                     insert.save()
                     telephone = phone_number[1:]
-                    response = "END Urakoze kwiyandikisha kuri Smart Kigega,Numero y'ibanga ni: "+str(pin)+". \n Kubindi bisobanuro sura https://www.smartkigega.com"
+                    response = "END Urakoze kwiyandikisha kuri Smart Kigega,Numero y'ibanga yanyu ni: "+str(pin)+". \n Kubindi bisobanuro sura https://www.smartkigega.com"
                     
                 except:
                     response = "END Kwiyandikisha byanze"
