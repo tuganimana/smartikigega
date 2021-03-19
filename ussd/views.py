@@ -33,7 +33,7 @@ def digitalapp (request):
         level = text.split('*')
         response = ''
         num = text[:3]
-        farmers=Farmers.objects.all().filter(number=phone_number).order_by('-id')[:1]
+        farmers=Farmers.objects.all().filter(number=phone_number).order_by('-id')
         for users in farmers:
             phoneuser = users.number
             fullname = users.fullname
