@@ -38,7 +38,7 @@ def digitalapp (request):
             phoneuser = users.number
             fullname = users.fullname
             mypin = users.pincode
-        if userselect.exists():
+        if farmers.exists():
             
             if text == '':
 
