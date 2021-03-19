@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'home',
     'rest_framework',
     'corsheaders',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'ussd'
 ]
 
 MIDDLEWARE = [
