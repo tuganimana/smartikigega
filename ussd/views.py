@@ -24,7 +24,7 @@ def digitalapp (request):
     if request.method == 'POST':
         session_id = request.POST.get('sessionId')
         service_code = request.POST.get('serviceCode')
-        phone_numer = request.POST.get("phoneNumber")
+        phone_number = request.POST.get("phoneNumber")
         text = request.POST.get('text')
         level = text.split('*')
         response = ''
@@ -48,14 +48,14 @@ def digitalapp (request):
             # else:
             #     response = 'END code washyizemo ntibaho '+str(level)+' \n'
    
-        elif num == '1*1' and int(len(level))==4 and str(level[3]) in str(level):
-            response = 'CON shyiramo amafaranga ugiye kwishyura \n' 
-        elif num == '1*1' and int(len(level))==5 and str(level[4]) in str(level):
-            response = 'CON  wahisemo kwishyura'+ str(level[4]) + 'ugiye kwishyura kuri' + str(level[2]) +'shyiramo umubare wibanga wemeze kwishyura  \n'
-            insert=Harvestrecord(code=str(level[2]),Quantity=str(level[3]))
-            insert.save()
-        elif text == '1*2':
-            response = 'CON nimero ya mobile : '+str(len(level))+ '\n'        
+        # elif num == '1*1' and int(len(level))==4 and str(level[3]) in str(level):
+        #     response = 'CON shyiramo amafaranga ugiye kwishyura \n' 
+        # elif num == '1*1' and int(len(level))==5 and str(level[4]) in str(level):
+        #     response = 'CON  wahisemo kwishyura'+ str(level[4]) + 'ugiye kwishyura kuri' + str(level[2]) +'shyiramo umubare wibanga wemeze kwishyura  \n'
+        #     insert=Harvestrecord(code=str(level[2]),Quantity=str(level[3]))
+        #     insert.save()
+        # elif text == '1*2':
+        #     response = 'CON nimero ya mobile : '+str(len(level))+ '\n'        
             # insert=Harvestrecord.objects.create(farmercode=str(level[2]))
             # insert.save()
         # elif num == '1*2' and int(len(level))==2 and str(level[3]) in str(level):
