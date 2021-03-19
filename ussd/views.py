@@ -42,7 +42,7 @@ def digitalapp (request):
             
             if text == '':
 
-                response = "CON murakaza neza kurubuga rw'abahinzi Smart ikigega \n"
+                response = "CON Murakaza neza kurubuga rw'abahinzi Smart ikigega \n"
                 response += '1.Ikigega pay \n'
                 response += '2.ibijyanye numusaruro \n'
                 response += '3.kwiyandikisha muri COOPERATIVE \n'
