@@ -24,7 +24,7 @@ def digitalapp (request):
     if request.method == 'POST':
         session_id = request.POST.get('sessionId')
         service_code = request.POST.get('serviceCode')
-        phone_numer = request.POST.get('phonenumer')
+        phone_numer = request.POST.get("phoneNumber")
         text = request.POST.get('text')
         level = text.split('*')
         response = ''
