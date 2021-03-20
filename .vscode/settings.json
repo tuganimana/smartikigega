@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "venv/bin/python3.8"
+    "python.pythonPath": "C:\\Users\\Diana\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "git.ignoreLimitWarning": true
 }

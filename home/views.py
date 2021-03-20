@@ -437,6 +437,29 @@ class CustomAuthToken(ObtainAuthToken):
 #             return render(request,'cooperative.html',{'message':'failed to insert','data':select})
 #     return render(request,'cooperative.html',{'data':select})
 
+def login(request):
+    if request.method=='POST':
+        userd=request.POST['email']
+        pass1=request.POST['password']
+        user=auth.authenticate(username=userd,password=pass1)
+        if user is not None:
+            auth.login(request,user)
+            if user.objects.filter(user=request.user).exists():
+                return redirect('record')
+            # elif Active.objects.filter(user=request.user).exists():
+            #     return redirect('record')
+            else:
+                messages.info(request,'make sure if your account is registred')
+                return redirect('signin')
+        else:
+            print(userd)
+            print(pass1)
+            messages.info(request,'Check your username and password password ')
+            return redirect('signin')
+    else:
+        return render(request,'signin.html')
+    return render(request,'signin.html')
+
 def Harvestrecording(request):
     select = Harvestrecord.objects.all()
     if request.method == 'POST':
@@ -546,7 +569,10 @@ def registration(request):
               
         return render(request,'cooperative.html')
 
-
+        
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 def user(request):
     if str(request.user)=='AnonymousUser':
         return redirect('index')
@@ -816,4 +842,4 @@ def dashboard(request):
 
         return render(request,'dashboard.html',{'cooperatives':cooperatives,'farmers':farmers,'Record':Record,'recorder':recorder})
     else:
-        return redirect('index')
+        return render(request,'index.html')

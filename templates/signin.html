@@ -73,7 +73,9 @@
         </h2>
         
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
+      <p class="alert alert-warning">{{message}}</p>
+      <form class="mt-8 space-y-6" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
         <input type="hidden" name="remember" value="true">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>

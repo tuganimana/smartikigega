@@ -35,8 +35,8 @@ class Active(models.Model):
     activate=models.FloatField(default=False)
     pub_date=models.DateTimeField(auto_now_add=True)
 class Farmers(models.Model):
-    fullname= models.CharField(max_length=255)
-   
+    firstname= models.CharField(max_length=255)
+    lastname= models.CharField(max_length=255)
     gender = models.CharField(max_length=255)
     district = models.CharField(max_length=255)
     village = models.CharField(max_length=255)
