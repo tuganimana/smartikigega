@@ -24,15 +24,18 @@ def digitalapp (request):
     if request.method == 'POST':
         session_id = request.POST.get('sessionId')
         service_code = request.POST.get('serviceCode')
-        phone_number = request.POST.get("phoneNumber")
+        phone_numer = request.POST.get('phonenumer')
         text = request.POST.get('text')
+        level = text.split('*')
+        response = ''
+        num = text[:3]
         # session_id = request.values.get("sessionId", None)
         # service_code = request.values.get("serviceCode", None)
         # phone_number = request.values.get("phoneNumber", None)
         # text = request.values.get("text", "default")
-        level = text.split('*')
-        response = ''
-        num = text[:3]
+        # level = text.split('*')
+        # response = ''
+        # num = text[:3]
         if text == '':
             response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
             response += '1.Ikigega pay \n'
