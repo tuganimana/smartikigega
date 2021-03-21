@@ -526,9 +526,9 @@ def registration(request):
             email=request.POST['email']
             password1=request.POST['password1']
             password2=request.POST['password2']
-            leaderphone=request.POST['leaderphone']
-            district = request.POST['district']
-            harvesttype = request.POST['harvesttype']
+            # leaderphone=request.POST['leaderphone']
+            # district = request.POST['district']
+            # harvesttype = request.POST['harvesttype']
             signer = Signer()
             passleng=len(password2)
             if password1==password2:
@@ -543,15 +543,17 @@ def registration(request):
                         return redirect('register')
                     else:
                         subject='Verification from smart ikigega'
-                        message='This link is for activating your account on smart ikigega'+'\n'+'your Username:  '+Name+'\n'+'https://harvestendpoint.herokuapp.com/activation/'+email+'/'+signer.sign(email)
+                        message='This link is for activating your account on smart ikigega'+'\n'+'your Username:  '+Name+'\n'+'https://smartikigega.herokuapp.com/activation/'+email+'/'+signer.sign(email)
+                        # +email+'/'+signer.sign(email)
                         from_email=settings.EMAIL_HOST_USER
                         rt=send_mail(subject,message,from_email,[str(email),],fail_silently=False)
                         print(rt)
                         if rt==True:
-                            user=User.objects.create_user(email=email,username=Name,password=password1,leaderphone=leaderphone,district=district,harvesttype=harvesttype)
+                            user=User.objects.create_user(email=email,username=Name,password=password1,)
                             user.save()
                             mess=email
                             return render(request,'cooperative.html',{'mess':mess})
+                            
                         else:
                             messages.info(request,'email is not exist please')
                             return redirect('register')
@@ -609,7 +611,7 @@ def user(request):
         lastnum=Regfarmer.objects.filter(telephone=telephone)
         nums=lastnum.count()
         print(nums)
-        if nums <= 2:
+        if nums <= 10:
             def random_with_N_digits(n):
                 range_start = 10**(n-1)
                 range_end = (10**n)-1
@@ -665,7 +667,7 @@ def activation(request,email,un):
     if un == unf:
         return render(request,'activate.html')
     else:
-        return redirect('index')
+        return redirect('index.html')
 
 def inside(request):
     user=request.user
@@ -707,7 +709,7 @@ def upload(request):
             return render(request,'upload.html')       
 def activate(request):
     if request.method=='POST':
-        user=request.POST['username']
+        user=request.POST['email']
         password=request.POST['password']
         user=auth.authenticate(username=user,password=password)
         if user is not None:

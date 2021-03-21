@@ -7,12 +7,12 @@ class Cooperative(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     name=models.CharField(max_length=255)
     email=models.CharField(max_length=255) 
-    leaderphone=models.CharField(max_length=255)
-    harvesttype=models.CharField(max_length=255)
+    # leaderphone=models.CharField(max_length=255)
+    # harvesttype=models.CharField(max_length=255)
     # email=models.CharField(max_length=255)
     # password1=models.CharField(max_length=255)
     # password2=models.CharField(max_length=255)
-    district=models.CharField(max_length=255) 
+    # district=models.CharField(max_length=255) 
     # Cooperativesector=models.CharField(max_length=255) 
     def __str__(self):
         return self.name
