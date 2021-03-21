@@ -27,7 +27,7 @@ def digitalapp (request):
         phone_numer = request.POST.get('phonenumer')
         text = request.POST.get('text')
         level = text.split('*')
-        response = ' '
+        response = ''
         num = text[:3]
         # session_id = request.values.get("sessionId", None)
         # service_code = request.values.get("serviceCode", None)
