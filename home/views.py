@@ -186,64 +186,63 @@ def digitalapp (request):
         return HttpResponse(response)
 
     return HttpResponse('harvest')    
-        return JsonResponse(serializer.errors,status=400)
-           '
-            response = 'CON murakaza neza muhinzi wumuceri hitamo ibijyanye na '+str(len(level))+'\n'
-            response += '1.ikigega pay \n'
-            response += '2.ibijyanye numusaruro \n'
-            response += '3.kwiyandikisha mukigega'
-            # current harvesting session
-        elif text == '1*1':
-            response = 'CON  shyiramo code yumuhinzi ugiye kwishyura : \n'
-            response += '1.umusaruro mbumbe wose \n'
-            response += '2.ingano yumusaruro muri uku kwezi \n'
-        elif text == '1*1*1':
-            response = 'CON injizamo code yumuhinzi  \n'
-            insert=Harvestrecord(farmercode=str(level[3]))
-            insert.save() 
-            y = input
-            y =request.POST['farmercode']
-            v=Harvestrecord.objects.filter(farmercode=y)
-            for rt in v:
-                qty = rt.Quantity
-        elif num == '1*1*1' and int(len(level))==4 and str(level[3]) in str(level):
-            response = 'CON umusaruro mbumbe wawe ni' + qty + ' \n'
-        elif text == '1*1*2':
-            response = 'CON injizamo code yumuhinzi \n'
-        elif num == '1*1*2'and int(len(level))==4 and str(level[3]) in str(level):
-            response = 'CON ingano yumusaruro muri uku kwezi ni 140kg \n'
-        #  financial session
-        elif text == '1*2':
-            response = 'CON murakaza neza  \n'
-            response += '1. kwishyura umusaruro \n'
-            response += '2. inguzanyo \n'
-            response += '3. uko nabona inguzanyo'
-            # direct loan session
-        elif text == '1*2*1':
-            response = 'CON injizamo code yumuhinzi ugiye kwishyura '+str(len(level))+' \n'
-        elif num == '1*2*1' and int(len(level))==4 and str(level[3]) in str(level):
-            response = 'CON shyiramo amafaranga ugiye kwishyura : \n'
-        elif num == '1*2*1' and int(len(level))==5 and str(level[4]) in str(level):
-            response = 'CON washyizemo' + str(level[4])  + 'ugiye kwishyura '+str(level[3])+  'kuri shyiramo umubare wibanga wemeze: \n'
-        elif num == '1*2*1' and int(len(level))==6 and str(level[5]) in str(level):
-            response = 'CON  kwishyura amafaranga byagenze neza  murakoze: \n'
-        elif text == '1*2*2':
-            response = 'CON Enter farmers code '+str(len(level))+' \n'
-        elif num == '1*2*2' and int(len(level))==4 and str(level[3]) in str(level):
-            response = 'CON Enter the money you want pay: \n'   
-        elif num == '1*2*2' and int(len(level))==5 and str(level[4]) in str(level):
-            response = 'CON Enter mobile-money pin to pay: \n'   
-        elif num == '1*2*2' and int(len(level))==6 and str(level[5]) in str(level):
-            response = 'CON you have succesfully paid the loan thanks: \n'   
-        elif text == '1*3':
-            response = 'CON Other services: \n'
-            response += '1.how to get crops insurance\n'
-            response += '2.join crops insurance \n'
-        elif text == '1*3*1':
-            response = 'END how to get crops insurance: \n'
-            response += 'in order to get crops insurance you have to be an active member of any registrated cooperative in our system \n'
-        elif text == '1*3*2':
-            response = 'END  enter the farmers code to get the insurance:'
+    # return JsonResponse(serializer.errors,status=400)
+        #     response = 'CON murakaza neza muhinzi wumuceri hitamo ibijyanye na '+str(len(level))+'\n'
+        #     response += '1.ikigega pay \n'
+        #     response += '2.ibijyanye numusaruro \n'
+        #     response += '3.kwiyandikisha mukigega'
+        #     # current harvesting session
+        # elif text == '1*1':
+        #     response = 'CON  shyiramo code yumuhinzi ugiye kwishyura : \n'
+        #     response += '1.umusaruro mbumbe wose \n'
+        #     response += '2.ingano yumusaruro muri uku kwezi \n'
+        # elif text == '1*1*1':
+        #     response = 'CON injizamo code yumuhinzi  \n'
+        #     insert=Harvestrecord(farmercode=str(level[3]))
+        #     insert.save() 
+        #     y = input
+        #     y =request.POST['farmercode']
+        #     v=Harvestrecord.objects.filter(farmercode=y)
+        #     for rt in v:
+        #         qty = rt.Quantity
+        # elif num == '1*1*1' and int(len(level))==4 and str(level[3]) in str(level):
+        #     response = 'CON umusaruro mbumbe wawe ni' + qty + ' \n'
+        # elif text == '1*1*2':
+        #     response = 'CON injizamo code yumuhinzi \n'
+        # elif num == '1*1*2'and int(len(level))==4 and str(level[3]) in str(level):
+        #     response = 'CON ingano yumusaruro muri uku kwezi ni 140kg \n'
+        # #  financial session
+        # elif text == '1*2':
+        #     response = 'CON murakaza neza  \n'
+        #     response += '1. kwishyura umusaruro \n'
+        #     response += '2. inguzanyo \n'
+        #     response += '3. uko nabona inguzanyo'
+        #     # direct loan session
+        # elif text == '1*2*1':
+        #     response = 'CON injizamo code yumuhinzi ugiye kwishyura '+str(len(level))+' \n'
+        # elif num == '1*2*1' and int(len(level))==4 and str(level[3]) in str(level):
+        #     response = 'CON shyiramo amafaranga ugiye kwishyura : \n'
+        # elif num == '1*2*1' and int(len(level))==5 and str(level[4]) in str(level):
+        #     response = 'CON washyizemo' + str(level[4])  + 'ugiye kwishyura '+str(level[3])+  'kuri shyiramo umubare wibanga wemeze: \n'
+        # elif num == '1*2*1' and int(len(level))==6 and str(level[5]) in str(level):
+        #     response = 'CON  kwishyura amafaranga byagenze neza  murakoze: \n'
+        # elif text == '1*2*2':
+        #     response = 'CON Enter farmers code '+str(len(level))+' \n'
+        # elif num == '1*2*2' and int(len(level))==4 and str(level[3]) in str(level):
+        #     response = 'CON Enter the money you want pay: \n'   
+        # elif num == '1*2*2' and int(len(level))==5 and str(level[4]) in str(level):
+        #     response = 'CON Enter mobile-money pin to pay: \n'   
+        # elif num == '1*2*2' and int(len(level))==6 and str(level[5]) in str(level):
+        #     response = 'CON you have succesfully paid the loan thanks: \n'   
+        # elif text == '1*3':
+        #     response = 'CON Other services: \n'
+        #     response += '1.how to get crops insurance\n'
+        #     response += '2.join crops insurance \n'
+        # elif text == '1*3*1':
+        #     response = 'END how to get crops insurance: \n'
+        #     response += 'in order to get crops insurance you have to be an active member of any registrated cooperative in our system \n'
+        # elif text == '1*3*2':
+        #     response = 'END  enter the farmers code to get the insurance:'
 
 #farm
 
