@@ -22,14 +22,14 @@ africastalking.initialize(username, api_key)
 @csrf_exempt
 def digitalapp (request):
     if request.method == 'POST':
-        # session_id = request.POST.get('sessionId')
-        # service_code = request.POST.get('serviceCode')
-        # phone_number = request.POST.get("phoneNumber")
-        # text = request.POST.get('text')
-        session_id = request.values.get("sessionId", None)
-        service_code = request.values.get("serviceCode", None)
-        phone_number = request.values.get("phoneNumber", None)
-        text = request.values.get("text", "default")
+        session_id = request.POST.get('sessionId')
+        service_code = request.POST.get('serviceCode')
+        phone_number = request.POST.get("phoneNumber")
+        text = request.POST.get('text')
+        # session_id = request.values.get("sessionId", None)
+        # service_code = request.values.get("serviceCode", None)
+        # phone_number = request.values.get("phoneNumber", None)
+        # text = request.values.get("text", "default")
         level = text.split('*')
         response = ''
         num = text[:3]
