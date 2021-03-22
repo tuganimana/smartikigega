@@ -227,12 +227,12 @@ def digitalapp(request):
         response =""
         st = text[:3]
         farmers=2
-        # farmers=Farmers.objects.all().filter(number=phone_number).order_by('-id')
-        # for users in farmers:
-        #     phoneuser = users.number
-        #     fullname = users.fullname
-        #     mypin = users.pincode
-        if farmers>int(1):
+        farmerss=Farmers.objects.all().filter(number=phone_number).order_by('-id')
+        for users in farmers:
+            phoneuser = users.number
+            fullname = users.fullname
+            mypin = users.pincode
+        if farmers<int(1):
 
            
             if text =='':
@@ -270,12 +270,9 @@ def digitalapp(request):
                 response ="END INvalid choice "
         else:
             if text =='':
-                response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
-                response += '1.Ikigega pay \n'
-                response += '2.ibijyanye numusaruro \n'
-                response += '3.kwiyandikisha muri COOPERATIVE \n'
-                response += '4.kubarura umusaruro \n'
-            
+                response = "CON Ikaze kuri Smart Kigega, Iyandikishe mu kigega \n"
+                response += '1.Iyandikishe \n'
+                
             # if text=='':
             # response = "CON Ikaze kuri Smart Kigega, Iyandikishe mu kigega \n"
             # response +="1.Iyandikishe \n"     
