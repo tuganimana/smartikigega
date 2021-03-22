@@ -225,7 +225,8 @@ def digitalapp(request):
         text = request.POST.get("text")
         level = text.split('*')
         response =""
-        st = text[:3]
+        numb = text[:3]
+        st =text[:1]
         farmers=2
         farmerss=Farmers.objects.all().filter(number=phone_number).order_by('-id')
         for users in farmerss:
