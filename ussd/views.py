@@ -175,7 +175,7 @@ def digitalapp (request):
                 
                 
         else:
-            
+
             
             if text=='':
                 response = "CON Ikaze kuri Smart Kigega, Iyandikishe mu kigega \n"
@@ -212,5 +212,5 @@ def digitalapp (request):
 
                     response = "END Invalid choice"    
 
-    return HttpResponse('harvest')    
+    return HttpResponse('harvest-ussd app-smart ikigega')    
   
