@@ -21,19 +21,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body style="background-image:radial-gradient(circle, rgb(189, 212, 228), rgb(227, 224, 243), rgb(242, 181, 250));">
-    <ul class="nav justify-content-center">
+<style>
+  body {
+  background-image: url("{% static 'image/image3.jpg' %}" );
+  /* opacity: 0.8; */
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+</style>
+<body >
+    <ul class="nav justify-content-center bg-indigo-600">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">home</a>
+          <a class="nav-link active text-white" aria-current="page" href="/">home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'work' %}">Features</a>
+          <a class="nav-link text-white" href="{% url 'work' %}">Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">partners</a>
+          <a class="nav-link text-white" href="#">partners</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="{% url 'cooperative' %}" tabindex="-1" aria-disabled="true">Register</a>
+          <a class="nav-link text-white " href="{% url 'cooperative' %}" tabindex="-1" aria-disabled="true">Register</a>
         </li>
       </ul>
       

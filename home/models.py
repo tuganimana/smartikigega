@@ -7,12 +7,12 @@ class Cooperative(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     name=models.CharField(max_length=255)
     email=models.CharField(max_length=255) 
-    leaderphone=models.CharField(max_length=255)
-    harvesttype=models.CharField(max_length=255)
+    # leaderphone=models.CharField(max_length=255)
+    # harvesttype=models.CharField(max_length=255)
     # email=models.CharField(max_length=255)
     # password1=models.CharField(max_length=255)
     # password2=models.CharField(max_length=255)
-    district=models.CharField(max_length=255) 
+    # district=models.CharField(max_length=255) 
     # Cooperativesector=models.CharField(max_length=255) 
     def __str__(self):
         return self.name
@@ -35,8 +35,8 @@ class Active(models.Model):
     activate=models.FloatField(default=False)
     pub_date=models.DateTimeField(auto_now_add=True)
 class Farmers(models.Model):
-    fullname= models.CharField(max_length=255)
-   
+    firstname= models.CharField(max_length=255)
+    lastname= models.CharField(max_length=255)
     gender = models.CharField(max_length=255)
     district = models.CharField(max_length=255)
     village = models.CharField(max_length=255)

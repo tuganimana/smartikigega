@@ -29,6 +29,8 @@ urlpatterns=[
     path('reset-now/smartikigega-password/<username>/',views.resetnow, name='resetnow'),
     # path('proove/get_admin/<int:pk>',views.prooving,name='proove'),
     path('farmerreg/',views.Farmerreg,name='farmerreg'),
+    path('login/', views.login, name='login'),
+    path('user-login/', CustomAuthToken.as_view()),
     # path('<int:id>deleteInfos', views.delreg, name='deleteInfos'),
     # path('<int:id>updateInfos',views.updatereg, name='updateInfos'),
     # path('reg/endpoint', views.registerEndpoint, name='endpoint'),
