@@ -228,15 +228,14 @@ def digitalapp(request):
         response =""
         numb = text[:3]
         st =text[:1]
-        farmers=2
-        farmerss=Farmers.objects.all().filter(number=phone_number).order_by('-id')
-        for users in farmerss:
+       
+        farmers=Farmers.objects.all().filter(number=phone_number).order_by('-id')
+        for users in farmers:
             phoneuser = users.number
             fullname = users.fullname
             mypin = users.pincode
-        if farmers<int(1):
-
-           
+        if farmers.exists():
+                      
             if text =='':
                 response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
                 response += '1.Ikigega pay \n'
@@ -313,7 +312,5 @@ def digitalapp(request):
 
 
         return HttpResponse(response)
-    if Farmers.objects.all().filter(number=2939).order_by('-id').exists():
-        return HttpResponse('welcome')
-    else:
-        return HttpResponse('Testing smart')
+    
+    return HttpResponse('Testing smart')
