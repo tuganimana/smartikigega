@@ -232,7 +232,7 @@ def digitalapp(request):
         #     phoneuser = users.number
         #     fullname = users.fullname
         #     mypin = users.pincode
-        if farmers>4:
+        if farmers>int(1):
            
             if text =='':
                 response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
