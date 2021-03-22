@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User,auth
+from ussd.models import *
 # Create your models here.
 
 
@@ -34,24 +35,24 @@ class Active(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     activate=models.FloatField(default=False)
     pub_date=models.DateTimeField(auto_now_add=True)
-class Farmers(models.Model):
-    firstname= models.CharField(max_length=255)
-    lastname= models.CharField(max_length=255)
-    gender = models.CharField(max_length=255)
-    district = models.CharField(max_length=255)
-    village = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    country = models.CharField(max_length=255)
-    harvesttype = models.CharField(max_length=255)
-    dateofbirth = models.CharField(max_length=255)
-    number = models.CharField(max_length=255)
-    Cooperative=models.CharField(max_length=255,default='')
-    code=models.CharField(max_length=255)
-    pincode=models.CharField(max_length=255)
-    sector=models.CharField(max_length=255) 
-    cell=models.CharField(max_length=255) 
-    def __str__(self):
-        return self.firstname        
+# class Farmers(models.Model):
+#     firstname= models.CharField(max_length=255)
+#     lastname= models.CharField(max_length=255)
+#     gender = models.CharField(max_length=255)
+#     district = models.CharField(max_length=255)
+#     village = models.CharField(max_length=255)
+#     email = models.CharField(max_length=255)
+#     country = models.CharField(max_length=255)
+#     harvesttype = models.CharField(max_length=255)
+#     dateofbirth = models.CharField(max_length=255)
+#     number = models.CharField(max_length=255)
+#     Cooperative=models.CharField(max_length=255,default='')
+#     code=models.CharField(max_length=255)
+#     pincode=models.CharField(max_length=255)
+#     sector=models.CharField(max_length=255) 
+#     cell=models.CharField(max_length=255) 
+#     def __str__(self):
+#         return self.firstname        
 
 class Regfarmer(models.Model):
     firstname= models.CharField(max_length=255)

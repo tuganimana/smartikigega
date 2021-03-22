@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 import africastalking
 from .models import*
+from ussd.models import *
 from .serializers import*
 import codecs
 from django.http import HttpResponse, JsonResponse
