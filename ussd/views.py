@@ -233,6 +233,7 @@ def digitalapp(request):
         #     fullname = users.fullname
         #     mypin = users.pincode
         if farmers>int(1):
+
            
             if text =='':
                 response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
@@ -268,38 +269,44 @@ def digitalapp(request):
             else:
                 response ="END INvalid choice "
         else:
+            if text =='':
+                response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
+                response += '1.Ikigega pay \n'
+                response += '2.ibijyanye numusaruro \n'
+                response += '3.kwiyandikisha muri COOPERATIVE \n'
+                response += '4.kubarura umusaruro \n'
             
-            if text=='':
-            response = "CON Ikaze kuri Smart Kigega, Iyandikishe mu kigega \n"
-            response +="1.Iyandikishe \n"     
-            elif text =='1':
-                response = "CON Andika amazina yawe \n"
+            # if text=='':
+            # response = "CON Ikaze kuri Smart Kigega, Iyandikishe mu kigega \n"
+            # response +="1.Iyandikishe \n"     
+            # elif text =='1':
+            #     response = "CON Andika amazina yawe \n"
 
-            elif int(st)==1  and int(len(level))==2  and   str(level[1]) in str(level):
-                response = "CON Shyiramo Umubare w'ibanga wawe \n"
-            elif int(st)==1  and int(len(level))==3  and   str(level[2]) in str(level):
-                response = "CON Andika akarere utuyemo \n" 
-            elif int(st)==1  and int(len(level))==4  and   str(level[3]) in str(level):
-                response = "CON Andika Umurenge utuyemo \n"
-            elif int(st)==1  and int(len(level))==5  and   str(level[4]) in str(level):
-                pin=str(level[2])
-                district =str(level[3])
-                sector =str(level[4])
-                pincode = make_password(pin)
-                def random_with_N_digits(n):
-                    range_start = 10**(n-1)
-                    range_end = (10**n)-1
-                    return randint(range_start, range_end)
-                    numb = random_with_N_digits(5)
-                    insert =Farmers(number=phone_number,code=numb,sector=sector,district=district, fullname=str(level[1]),pincode=pin,joined_on=created_on)
-                    try:
+            # elif int(st)==1  and int(len(level))==2  and   str(level[1]) in str(level):
+            #     response = "CON Shyiramo Umubare w'ibanga wawe \n"
+            # elif int(st)==1  and int(len(level))==3  and   str(level[2]) in str(level):
+            #     response = "CON Andika akarere utuyemo \n" 
+            # elif int(st)==1  and int(len(level))==4  and   str(level[3]) in str(level):
+            #     response = "CON Andika Umurenge utuyemo \n"
+            # elif int(st)==1  and int(len(level))==5  and   str(level[4]) in str(level):
+            #     pin=str(level[2])
+            #     district =str(level[3])
+            #     sector =str(level[4])
+            #     pincode = make_password(pin)
+            #     def random_with_N_digits(n):
+            #         range_start = 10**(n-1)
+            #         range_end = (10**n)-1
+            #         return randint(range_start, range_end)
+            #         numb = random_with_N_digits(5)
+            #         insert =Farmers(number=phone_number,code=numb,sector=sector,district=district, fullname=str(level[1]),pincode=pin,joined_on=created_on)
+            #         try:
                     
-                        insert.save()
-                        telephone = phone_number[1:]
-                        response = "END Urakoze kwiyandikisha kuri Smart Kigega,Numero y'ibanga yanyu ni: "+str(pin)+". \n Kubindi bisobanuro sura https://www.smartkigega.com"
+            #             insert.save()
+            #             telephone = phone_number[1:]
+            #             response = "END Urakoze kwiyandikisha kuri Smart Kigega,Numero y'ibanga yanyu ni: "+str(pin)+". \n Kubindi bisobanuro sura https://www.smartkigega.com"
                         
-                    except:
-                        response = "END Kwiyandikisha byanze"
+            #         except:
+            #             response = "END Kwiyandikisha byanze"
             else:
 
                     response = "END Invalid choice"    
