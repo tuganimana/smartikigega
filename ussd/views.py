@@ -276,13 +276,14 @@ def digitalapp(request):
             elif text =='1':
                 response = "CON Andika amazina yawe \n"
 
-            elif int(st)==1  and int(len(level))==2  and   str(level[1]) in str(level):
+            elif str(st)=='1*1'  and int(len(level))==2  and   str(level[1]) in str(level):
+
                 response = "CON Shyiramo Umubare w'ibanga wawe \n"
-            elif int(st)==1  and int(len(level))==3  and   str(level[2]) in str(level):
+            elif str(st)=='1*1'  and int(len(level))==3  and   str(level[2]) in str(level):
                 response = "CON Andika akarere utuyemo \n" 
-            elif int(st)==1  and int(len(level))==4  and   str(level[3]) in str(level):
+            elif str(st)=='1*1'  and int(len(level))==4  and   str(level[3]) in str(level):
                 response = "CON Andika Umurenge utuyemo \n"
-            elif int(st)==1  and int(len(level))==5  and   str(level[4]) in str(level):
+            elif str(st)=='1*1'  and int(len(level))==5  and   str(level[4]) in str(level):
                 pin=str(level[2])
                 district =str(level[3])
                 sector =str(level[4])
