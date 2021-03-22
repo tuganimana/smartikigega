@@ -290,12 +290,12 @@ def digitalapp(request):
                 district =str(level[3])
                 sector =str(level[4])
                 pincode = make_password(pin)
-                # def random_with_N_digits(n):
-                #     range_start = 10**(n-1)
-                #     range_end = (10**n)-1
-                #     return randint(range_start, range_end)
-                # numb = random_with_N_digits(5)
-                insert =Farmers(number=phone_number,code=727728,sector=sector,district=district, fullname=str(level[1]),pincode=pin)
+                def random_with_N_digits(n):
+                    range_start = 10**(n-1)
+                    range_end = (10**n)-1
+                    return randint(range_start, range_end)
+                numb = random_with_N_digits(5)
+                insert =Farmers(number=phone_number,code=numb,sector=sector,district=district, firstname=str(level[1]),pincode=pin)
                 try:
                 
                     insert.save()
@@ -313,6 +313,7 @@ def digitalapp(request):
 
 
         return HttpResponse(response)
-
-
-    return HttpResponse('welcome')
+    if Farmers.objects.all().filter(number=2939).order_by('-id').exists():
+        return HttpResponse('welcome'
+    else:
+        return HttpResponse('Testing smart')
