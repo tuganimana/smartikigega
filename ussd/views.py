@@ -228,7 +228,7 @@ def digitalapp(request):
         st = text[:3]
         farmers=2
         farmerss=Farmers.objects.all().filter(number=phone_number).order_by('-id')
-        for users in farmers:
+        for users in farmerss:
             phoneuser = users.number
             fullname = users.fullname
             mypin = users.pincode
