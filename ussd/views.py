@@ -13,6 +13,7 @@ import urllib,json
 
 import datetime
 from random import randint
+import random
 from django.core.signing import Signer
 from django.views.decorators.csrf import csrf_exempt
 username = "tuganimana01@gmail.com"
