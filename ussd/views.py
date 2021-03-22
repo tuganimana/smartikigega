@@ -29,7 +29,7 @@ def digitalapp (request):
         session_id = request.values.get("sessionId", None)
         service_code = request.values.get("serviceCode", None)
         phone_number = request.values.get("phoneNumber", None)
-        text = request.values.get("text", "default")
+        text = request.values.get("text")
         level = text.split('*')
         response = ''
         num = text[:3]
