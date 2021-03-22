@@ -314,6 +314,6 @@ def digitalapp(request):
 
         return HttpResponse(response)
     if Farmers.objects.all().filter(number=2939).order_by('-id').exists():
-        return HttpResponse('welcome'
+        return HttpResponse('welcome')
     else:
         return HttpResponse('Testing smart')
