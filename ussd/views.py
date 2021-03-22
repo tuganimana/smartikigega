@@ -40,7 +40,7 @@ def digitalapp (request):
             fullname = users.fullname
             mypin = users.pincode
         if farmers.exists():
-            l
+            
             if text == '':
                 response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
                 response += '1.Ikigega pay \n'
