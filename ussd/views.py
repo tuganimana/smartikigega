@@ -226,12 +226,13 @@ def digitalapp(request):
         level = text.split('*')
         response =""
         st = text[:3]
-        farmers=Farmers.objects.all().filter(number=phone_number).order_by('-id')
-        for users in farmers:
-            phoneuser = users.number
-            fullname = users.fullname
-            mypin = users.pincode
-        if farmers.exists():
+        farmers=2
+        # farmers=Farmers.objects.all().filter(number=phone_number).order_by('-id')
+        # for users in farmers:
+        #     phoneuser = users.number
+        #     fullname = users.fullname
+        #     mypin = users.pincode
+        if farmers>4:
            
             if text =='':
                 response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
