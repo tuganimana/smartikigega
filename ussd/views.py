@@ -294,7 +294,7 @@ def digitalapp(request):
                     range_end = (10**n)-1
                     return randint(range_start, range_end)
                 numb = random_with_N_digits(5)
-                insert =Farmers(number=phone_number,code=numb,sector=sector,district=district, fullname=str(level[1]),pincode=pin,joined_on=created_on)
+                insert =Farmers(number=phone_number,code=numb,sector=sector,district=district, fullname=str(level[1]),pincode=pin)
                 try:
                 
                     insert.save()
