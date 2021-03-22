@@ -228,9 +228,11 @@ def digitalapp(request):
         numb = text[:3]
 
         if text =='':
-            response = "CON Welcome to ida technology USSD app \n "
-            response +="1. Girls in code \n"
-            response +="2. Sdf program "
+            response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
+            response += '1.Ikigega pay \n'
+            response += '2.ibijyanye numusaruro \n'
+            response += '3.kwiyandikisha muri COOPERATIVE \n'
+            response += '4.kubarura umusaruro \n'
         elif text =='1':
             response ="CON Welcome to Girls in code program "+str(len(level))+"\n"
             response +="1. Join the program \n"
