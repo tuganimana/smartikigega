@@ -23,13 +23,13 @@ africastalking.initialize(username, api_key)
 def digitalapp (request):
     if request.method == 'POST':
 
-        # session_id = request.POST.get('sessionId')
-        # service_code = request.POST.get('serviceCode')
-        # phone_number = request.POST.get("phoneNumber")
-        # text = request.POST.get('text')
-        session_id = request.values.get("sessionId", None)
-        service_code = request.values.get("serviceCode", None)
-        phone_number = request.values.get("phoneNumber", None)
+        session_id = request.POST.get('sessionId')
+        service_code = request.POST.get('serviceCode')
+        phone_number = request.POST.get("phoneNumber")
+        text = request.POST.get('text')
+        # session_id = request.values.get("sessionId", None)
+        # service_code = request.values.get("serviceCode", None)
+        # phone_number = request.values.get("phoneNumber", None)
 
         level = text.split('*')
         response = ''
