@@ -227,13 +227,12 @@ def digitalapp(request):
         level = text.split('*')
         response =""
         numb = text[:3]
-
         st =text[:1]
-       
-        farmers=Farmers.objects.all().filter(number=str(phone_number)).order_by('-id')
+     
+        farmers=Farmers.objects.all().filter(number=phone_number).order_by('-id')
         for users in farmers:
             phoneuser = users.number
-            fullname = users.fullname
+            fullname = users.firstname
             mypin = users.pincode
         if farmers.exists():
                       
